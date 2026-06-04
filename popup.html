@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YenTick</title>
+  <link rel="stylesheet" href="popup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="logo-area">
+        <span class="logo-dot"></span>
+        <h1 class="logo-text">YEN<span class="accent-text">TICK</span></h1>
+      </div>
+      <div class="pair-badge">USD/JPY</div>
+    </header>
+
+    <!-- Main Container (Switchable Views) -->
+    <main class="app-main">
+      
+      <!-- LOADING VIEW -->
+      <div id="view-loading" class="view active">
+        <div class="loader-container">
+          <div class="pulse-loader"></div>
+          <p class="loading-text">CONNECTING TO MARKET...</p>
+        </div>
+      </div>
+
+      <!-- DATA VIEW -->
+      <div id="view-data" class="view">
+        <div class="rate-section">
+          <div class="rate-meta">
+            <span class="status-indicator live">LIVE</span>
+            <span id="rate-time" class="rate-time">-</span>
+          </div>
+          <div class="rate-display">
+            <span id="rate-value" class="rate-value">000.000</span>
+            <span class="currency-symbol">¥</span>
+          </div>
+        </div>
+
+        <div class="chart-section">
+          <div class="chart-header">
+            <span class="chart-title">24H TREND</span>
+            <div class="chart-stats">
+              <span class="stat-lbl">H:</span><span id="stat-high" class="stat-val">-</span>
+              <span class="stat-lbl ml-2">L:</span><span id="stat-low" class="stat-val">-</span>
+            </div>
+          </div>
+          <!-- SVG Chart Container -->
+          <div class="chart-container">
+            <svg id="trend-chart" viewBox="0 0 300 150" preserveAspectRatio="none">
+              <!-- Grid Lines, Path, Gradient Filled Path will be injected here by GraphRenderer -->
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- ERROR VIEW -->
+      <div id="view-error" class="view">
+        <div class="error-container">
+          <div class="error-icon">⚠️</div>
+          <h2 class="error-title">CONNECTION ERROR</h2>
+          <p id="error-message" class="error-message">オフラインのためデータを取得できません</p>
+          
+          <!-- Cached Data Box (Fallback Display) -->
+          <div id="cache-fallback-box" class="fallback-box hidden">
+            <div class="fallback-header">OFFLINE MODE (LAST KNOWN)</div>
+            <div class="fallback-rate">
+              <span id="cache-rate-value" class="fallback-rate-val">000.000</span><span class="fallback-rate-symbol">¥</span>
+            </div>
+            <div id="cache-time" class="fallback-time">-</div>
+          </div>
+
+          <button id="btn-reload" class="btn-reload">RETRY CONNECTION</button>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="footer-credit">DATA PROVIDED BY OPEN EXCHANGE RATES</div>
+    </footer>
+  </div>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

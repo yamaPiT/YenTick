@@ -1,0 +1,14 @@
+YenTick Integration Test Console Log Evidence
+----------------------------------------------
+Date: 2026-06-04
+Environment: Sandbox Browser (Puppeteer/Chromium)
+Target Page: popup_inline.html
+
+[log] [GraphRenderer] Render completed in 0.80ms
+[warning] [AppController] API fetch failed: Simulated offline error. Checking fallback cache...
+[log] [GraphRenderer] Render completed in 0.40ms
+[warning] [AppController] API fetch failed: Simulated offline error. Checking fallback cache...
+
+Note:
+- All CSP (Content Security Policy) rules are respected. No CSP warnings or syntax errors were emitted.
+- Fetch timeout and network errors are successfully handled by transitioning to the connection error screen and attempting fallback memory loading.
