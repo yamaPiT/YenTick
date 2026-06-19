@@ -97,7 +97,7 @@ graph TD
 > [!NOTE]
 > - 自動テストコード（`popup.test.js`）は、総合テスト仕様に完全準拠した AAA（Arrange-Act-Assert）パターンで構築され、自動テスト実行により、**全10件 of テストケースが100%合格（PASS）**することを確認しました。
 > - 手動テストが必要な非機能要件および実機観点については、ブラウザ自動検証（`browser_subagent`）および実機動作確認（官能評価含む）により、**全テストケースに合格（PASS）**したことを確認しました。
-> - 補助資料（検証エビデンス）は [SWP6_evidence_normal.png](file:///c:/Users/mail2/Develop/YenTick/docs/artifact/SWP6_evidence_normal.png)、[SWP6_evidence_error.png](file:///c:/Users/mail2/Develop/YenTick/docs/artifact/SWP6_evidence_error.png)、[SWP6_evidence_console_log.txt](file:///c:/Users/mail2/Develop/YenTick/docs/artifact/SWP6_evidence_console_log.txt) として `docs/artifact` に格納されています。
+> - 補助資料（検証エビデンス）は [SWP6_evidence_normal.png](file:///c:/Users/mail2/Develop/YenTick/docs/artifacts/SWP6_evidence_normal.png)、[SWP6_evidence_error.png](file:///c:/Users/mail2/Develop/YenTick/docs/artifacts/SWP6_evidence_error.png)、[SWP6_evidence_console_log.txt](file:///c:/Users/mail2/Develop/YenTick/docs/artifacts/SWP6_evidence_console_log.txt) として `docs/artifacts` に格納されています。
 
 ### 4.1 テスト実施概要
 * **テスト実施日**: 2026-06-04
@@ -114,18 +114,18 @@ graph TD
 | **TC-NOR-004** | 2026-06-04 | **PASS (手動/自動)** | SVG Bézier曲線による滑らかな折れ線およびグラデーション描画 | SVG要素生成に自動合格。ブラウザ実機で滑らかなBézier曲線と美しいグラデーション描画を確認。 |
 | **TC-NOR-005** | 2026-05-29 | **PASS (自動)** | `chrome.storage.local` へのキャッシュシリアライズ保存 | `popup.test.js` による書き込み動作エミュレートに合格。 |
 | **TC-NOR-006** | 2026-05-29 | **PASS (自動)** | 複数通貨ペアの動的ストレージキーによるデータ独立処理（拡張性） | `popup.test.js` による他通貨ペアデータ独立書き込みに合格。 |
-| **TC-NOR-007** | 2026-06-04 | **PASS (手動/自動)** | 最高値・最安値表示の配置およびレイアウト検証（右端50pxマージン） | グラフの右端に50pxのマージンが確保され、最高値・最安値テキストが小数点以下3桁で正しく描画・配置されることを実機確認。（証跡: [SWP6_evidence_normal.png](file:///c:/Users/mail2/Develop/YenTick/docs/artifact/SWP6_evidence_normal.png)） |
-| **TC-NOR-008** | 2026-06-04 | **PASS (手動/自動)** | 現在値インジケータ（◀矢印、数値ラベル、背景）の動的追従描画検証 | 現在値に応じたインジケータ（◀矢印、数値ラベル、背景矩形）がグラフ右マージン内に正しく追従・描画されることを実機確認。（証跡: [SWP6_evidence_normal.png](file:///c:/Users/mail2/Develop/YenTick/docs/artifact/SWP6_evidence_normal.png)） |
+| **TC-NOR-007** | 2026-06-04 | **PASS (手動/自動)** | 最高値・最安値表示の配置およびレイアウト検証（右端50pxマージン） | グラフの右端に50pxのマージンが確保され、最高値・最安値テキストが小数点以下3桁で正しく描画・配置されることを実機確認。（証跡: [SWP6_evidence_normal.png](file:///c:/Users/mail2/Develop/YenTick/docs/artifacts/SWP6_evidence_normal.png)） |
+| **TC-NOR-008** | 2026-06-04 | **PASS (手動/自動)** | 現在値インジケータ（◀矢印、数値ラベル、背景）の動的追従描画検証 | 現在値に応じたインジケータ（◀矢印、数値ラベル、背景矩形）がグラフ右マージン内に正しく追従・描画されることを実機確認。（証跡: [SWP6_evidence_normal.png](file:///c:/Users/mail2/Develop/YenTick/docs/artifacts/SWP6_evidence_normal.png)） |
 | **TC-ERR-001** | 2026-05-29 | **PASS (自動)** | オフライン時のキャッシュ取得と最終更新日時警告付き縮退運転 | `popup.test.js` によるキャッシュ復元・画面反映検証に合格。 |
 | **TC-ERR-002** | 2026-05-29 | **PASS (自動)** | `AbortController` による5秒通信タイムアウトとキャッシュフォールバック | `popup.test.js` による5秒超過の強制遮断＆キャッシュ縮退動作に合格。 |
 | **TC-ERR-003** | 2026-05-29 | **PASS (自動)** | キャッシュの24時間期限切れ検出と完全エラー表示遷移 | `popup.test.js` による24時間超過データの廃棄＆エラー遷移に合格。 |
 | **TC-ERR-004** | 2026-05-29 | **PASS (自動)** | キャッシュ未存在時の完全エラー表示と「再試行」ボタン描画 | `popup.test.js` によるエラー画面遷移＆再試行ボタン描画に合格。 |
 | **TC-ERR-005** | 2026-05-29 | **PASS (自動)** | 不揮発キャッシュ破損（JSON例外等）時の安全なエラーフォールバック | `popup.test.js` によるJSONパースエラー検知＆エラー画面遷移に合格。 |
 | **TC-ERR-006** | 2026-05-29 | **PASS (自動)** | APIから `NaN` など不正データ受信時のバリデーション検知 | `popup.test.js` による不正値検知＆例外処理（キャッシュ縮退）に合格。 |
-| **TC-ERR-007** | 2026-06-04 | **PASS (手動/自動)** | 通信エラー/キャッシュなし時のエラー画面遷移 | APIエラー時にフリーズせず、通信エラー表示および再試行ボタン、オフライン縮退表示が行われることを確認。（証跡: [SWP6_evidence_error.png](file:///c:/Users/mail2/Develop/YenTick/docs/artifact/SWP6_evidence_error.png)） |
+| **TC-ERR-007** | 2026-06-04 | **PASS (手動/自動)** | 通信エラー/キャッシュなし時のエラー画面遷移 | APIエラー時にフリーズせず、通信エラー表示および再試行ボタン、オフライン縮退表示が行われることを確認。（証跡: [SWP6_evidence_error.png](file:///c:/Users/mail2/Develop/YenTick/docs/artifacts/SWP6_evidence_error.png)） |
 | **TC-ERR-008** | 2026-06-04 | **PASS (手動/自動)** | エラー画面における「再試行 (Reload)」ボタン押下による再ローディング | 「再試行」ボタン押下により、画面がローディング状態へ戻り、APIの再 fetch が試みられることを実機動作確認。 |
 | **TC-ERR-009** | 2026-06-04 | **PASS (手動/自動)** | グラフデータ境界値・異常値における描画・座標計算処理のガード検証 | ゼロ除算時のフラットな水平線描画および範囲外値のクリッピング（ガード処理）がエラーを起こさず実行されることを自動および実機で検証。 |
-| **TC-NFC-001** | 2026-06-04 | **PASS (手動)** | Manifest V3 of Content Security Policy (CSP) 制約チェック | 実機にてデベロッパーツールのConsoleを確認し、CSP違反警告やスクリプトエラーが一切発生しないことを確認。（証跡: [SWP6_evidence_console_log.txt](file:///c:/Users/mail2/Develop/YenTick/docs/artifact/SWP6_evidence_console_log.txt)） |
+| **TC-NFC-001** | 2026-06-04 | **PASS (手動)** | Manifest V3 of Content Security Policy (CSP) 制約チェック | 実機にてデベロッパーツールのConsoleを確認し、CSP違反警告やスクリプトエラーが一切発生しないことを確認。（証跡: [SWP6_evidence_console_log.txt](file:///c:/Users/mail2/Develop/YenTick/docs/artifacts/SWP6_evidence_console_log.txt)） |
 | **TC-NFC-002** | 2026-06-04 | **PASS (手動)** | 描画完了時間（10ms以内目標）およびオンライン応答速度（1.2s目標） | JavaScript内部処理およびSVG描画の完了が10ms以内（実測約1ms）で終了し、ローディングからデータ表示完了まで1.2秒以内に体感完了することを確認。 |
 | **TC-NFC-003** | 2026-06-04 | **PASS (手動)** | ポップアップ開閉によるメモリリーク無き完全解放検証 | ポップアップを10回連続で開閉させ、Chromeのタスクマネージャ上でメモリが累積せず、コンテキスト破棄時に完全解放されることを確認。 |
 | **TC-NFC-004** | 2026-05-29 | **PASS (手動)** | 拡張機能パッケージ合計サイズ（1.0MB未満：実機約15KB） | フォルダ全体の合計サイズを確認（極めて軽量な約15KB）。 |

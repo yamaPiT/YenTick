@@ -15,11 +15,11 @@
 ## 承認済みドキュメント一覧
 | ドキュメントID | ファイルパス | 状態 |
 | :--- | :--- | :--- |
-| SW105 | `docs/artifact/SW105_ソフトウェア要求仕様書.md` | 承認済 |
-| SW205 | `docs/artifact/SW205_ソフトウェアアーキテクチャ設計書.md` | 承認済 |
-| SWP6 | `docs/artifact/SWP6_Test_Report.md` | 承認済 |
-| TM101 | `docs/artifact/TM101_トレーサビリティマトリクス.md` | 承認済 |
-| BUG101 | `docs/artifact/BUG101_バグ管理表.md` | 解決済（バグなし） |
+| SW105 | `docs/artifacts/SW105_ソフトウェア要求仕様書.md` | 承認済 |
+| SW205 | `docs/artifacts/SW205_ソフトウェアアーキテクチャ設計書.md` | 承認済 |
+| SWP6 | `docs/artifacts/SWP6_Test_Report.md` | 承認済 |
+| TM101 | `docs/artifacts/TM101_トレーサビリティマトリクス.md` | 承認済 |
+| BUG101 | `docs/artifacts/BUG101_バグ管理表.md` | 解決済（バグなし） |
 
 ## 引き継ぎ事項・注意点
 - **変更スケール**: **Minor** (最終確認工程)
